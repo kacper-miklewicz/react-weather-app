@@ -32,6 +32,7 @@ export default function Weather({ searchCity }) {
           return setError("Invalid city name!");
         } else setData(json);
         setError(null);
+        setCity(json[0].name);
         setLat(json[0].lat);
         setLon(json[0].lon);
       });
@@ -42,7 +43,6 @@ export default function Weather({ searchCity }) {
       )
         .then(res => res.json())
         .then(json => {
-          setCity(json.name);
           setDegrees(Math.round(json.main.temp));
           setIconSrc(json.weather[0].icon);
           setDescription(json.weather[0].main);
