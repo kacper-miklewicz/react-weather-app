@@ -9,6 +9,7 @@ export default function Search({ searchCity, setSearchCity }) {
 
   const handleClick = e => {
     setSearchCity(city);
+    setCity("");
   };
 
   return (
